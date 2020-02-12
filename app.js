@@ -29,7 +29,19 @@ function mainInfo() {
             message:"Enter Employee's Email",
             name:"email"
         }
-    ]);
+    ]).then(function(response){
+
+            employeeinfo.name = response.name;
+            employeeinfo.id = response.id;
+            employeeinfo.email = response.email;
+
+            if (response.tittle === "Manager") {
+
+                managerInfo();
+
+            }
+
+    });
 
 }
 
@@ -41,7 +53,10 @@ function managerInfo() {
             name:"office"
         },
         
-    ]);
+    ]).then(function(responsemanager){
+
+            employeeinfo.office = responsemanager.office;
+    });
 
 }
 
@@ -53,7 +68,10 @@ function githubUsername() {
             name:"username"
         },
         
-    ]);
+    ]).then(function(responseengineer){
+            employeeinfo.github = responseengineer.username
+
+    });
 
 }
 
@@ -65,7 +83,10 @@ function internSchool() {
             name:"school"
         },
         
-    ]);
+    ]).then(function(responseintern){
+        employeeinfo.school= responseintern.school;
+
+    });
 
 }
 
