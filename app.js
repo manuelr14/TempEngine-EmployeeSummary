@@ -128,6 +128,7 @@ function internSchool() {
         },
         
     ]).then(function(responseintern){
+        
         employeeinfo.school= responseintern.school;
 
         const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
