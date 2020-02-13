@@ -135,7 +135,7 @@ function moreEmployee() {
                 mainInfo();
 
             }else {
-                console.log("thank you, creating Template")
+                console.log("thank you, creating Template");
             }
     });
 
