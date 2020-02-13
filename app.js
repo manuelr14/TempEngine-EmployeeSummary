@@ -6,7 +6,7 @@ const intern = require("./lib/Intern");
 const generateHTML = require("./generatehtml");
 const fs = require("fs");
 const util = require("util");
-const asyncWrite = util.promisify(fs.writeFile);
+const writeFile = util.promisify(fs.writeFile);
 const employee = require("./lib/Employee");
 
 const employeeinfo = { };
@@ -138,13 +138,12 @@ function moreEmployee() {
                 mainInfo();
 
             }else {
-                console.log("thank you, creating Template");
-
                 
             
             const html =generateHTML.generatinghtml(employeeinfo);
+            writeFile("./output/team.html",html);
 
-           asyncWrite("./output/team.html",html);
+           console.log("Thanks!, Template Generated!");
          
         }  
     });

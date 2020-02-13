@@ -87,7 +87,7 @@ return templategenerated;
    
 function managerCard(manageremp){
 
-return `<div class="container">
+const managerGenerated =  `<div class="container">
 <div class="row">
     <div class="col-4">
         <div class="card manager" id="employee-card">
@@ -102,7 +102,7 @@ return `<div class="container">
     </div>`
 
 
-
+return managerGenerated;
 
 }
 
