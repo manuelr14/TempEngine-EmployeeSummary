@@ -25,7 +25,7 @@ function mainInfo() {
         {
             message: "Enter Employees Title",
             type:"list",
-            name: "title",
+            name: "tittle",
             choices: ["Manager","Engineer","Intern"]
         },
         {
