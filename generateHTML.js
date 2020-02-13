@@ -48,7 +48,7 @@ let templategenerated = `<DOCTYPE html>
                 <h1 id="my-team">My Team</h1>
             </div>
         </div>
-    </div>`
+    </div> <!--part 1/3 employee info below -->`
 
     employeearray.forEach(element => {
         let infoadd="";
@@ -66,8 +66,8 @@ let templategenerated = `<DOCTYPE html>
         }
             templategenerated += infoadd;
     });
-    
-templategenerated += `  <!--End Row-->
+
+templategenerated += `  <!--part 3/3 employee info over-->
 
 </div>
 </div>
