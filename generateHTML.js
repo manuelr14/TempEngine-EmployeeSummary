@@ -51,7 +51,7 @@ let templategenerated = `<DOCTYPE html>
     </div> <!--part 1/3 employee info below -->`
 
     employeearray.forEach(element => {
-        let infoadd="";
+        let infoadd=" ";
         switch(element.title){
             case "Manager":
                 infoadd = managerCard(element);
