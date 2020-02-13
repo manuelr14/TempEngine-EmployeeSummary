@@ -9,8 +9,8 @@ const util = require("util");
 const writeFile = util.promisify(fs.writeFile);
 const employee = require("./lib/Employee");
 
-const employeeinfo = { };
-const employeearray = [ ];
+let employeeinfo = { };
+let employeearray = [ ];
 
 mainInfo();
 
@@ -75,7 +75,7 @@ function managerInfo() {
     ]).then(function(responsemanager){
 
             employeeinfo.office = responsemanager.office;
-            const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.office);
+            let manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.office);
             console.log(manageremp);
             employeearray.push(manageremp);
             // console.log(employeearray);
@@ -101,7 +101,7 @@ function githubUsername() {
     ]).then(function(responseengineer){
             employeeinfo.github = responseengineer.username
             
-            const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.github);
+            let engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.github);
             console.log(engineeremp);
             employeearray.push(engineeremp);
             console.log(employeearray);
@@ -125,10 +125,10 @@ function internSchool() {
         
         employeeinfo.school= responseintern.school;
 
-        const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
+        let internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
                 console.log(internemp);
                 employeearray.push(internemp);
-                onsole.log(employeearray);
+                console.log(employeearray);
                 moreEmployee();
                 return internemp;
     });
@@ -153,7 +153,7 @@ function moreEmployee() {
             }else {
                 
             
-            const html =generateHTML.generatinghtml(employeearray);
+            let html =generateHTML.generatinghtml(employeearray);
             writeFile("./output/team.html",html);
             console.log(employeearray);
             console.log("Thanks!, Template Generated!");

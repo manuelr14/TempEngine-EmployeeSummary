@@ -51,7 +51,7 @@ let templategenerated = `<DOCTYPE html>
     </div>`
 
     employeearray.forEach(element => {
-        let infoadd=" ";
+        let infoadd="";
         switch(element.title){
             case "Manager":
                 infoadd = managerCard(element);
@@ -63,9 +63,9 @@ let templategenerated = `<DOCTYPE html>
                 infoadd = internCard(element);
                 break;
         }
-        templategenerated+=infoadd;
+        templategenerated += infoadd;
     });
-templategenerated+=`  <!--End Row-->
+templategenerated += `  <!--End Row-->
 
 </div>
 </div>
@@ -83,7 +83,7 @@ return templategenerated;
    
 function managerCard(manager){
 
-const managerGenerated =  `<div class="container">
+return  `<div class="container">
 <div class="row">
     <div class="col-4">
         <div class="card manager" id="employee-card">
@@ -98,13 +98,12 @@ const managerGenerated =  `<div class="container">
     </div>`
 
 
-return managerGenerated;
+
 
 }
 
 function engineerCard(engineer){
-
-const engineerGenerated =  `<div class="col-4">
+return `<div class="col-4">
 <div class="card engineer" id="employee-card">
     <div class="card-body">
         <h4 class="card-title">Name: ${engineer.name}</h4>
@@ -116,13 +115,13 @@ const engineerGenerated =  `<div class="col-4">
 </div>
 </div>`
 
-return engineerGenerated;
+
 
 }
 
 function internCard(intern){
 
-const internGenerated =  `<div class="col-4">
+return `<div class="col-4">
 <div class="card intern" id="employee-card">
     <div class="card-body">
         <h4 class="card-title">Name: ${intern.name}</h4>
@@ -134,9 +133,8 @@ const internGenerated =  `<div class="col-4">
 </div>
 </div>`
 
-return internGenerated;
-
 }
+
 
 module.exports = {generatinghtml: generatinghtml};
    
