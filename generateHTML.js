@@ -52,7 +52,7 @@ let templategenerated = `<DOCTYPE html>
 
     employeearray.forEach(element => {
         let infoadd=" ";
-        switch(element.title){
+        switch(element.tittle){
             case "Manager":
                 infoadd = managerCard(element);
                 break;
