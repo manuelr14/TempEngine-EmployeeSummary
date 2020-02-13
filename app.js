@@ -1,14 +1,15 @@
-const fs = require("fs");
+// const fs = require("fs");
 const inquirer = require("inquirer");
 
-const employee = require("./lib/Employee");
+// const employee = require("./lib/Employee");
 const manager = require("./lib/Manager");
 const engineer = require("./lib/Engineer");
 const intern = require("./lib/Intern");
 
-const employeeinfo = {};
+const employeeinfo = { };
 
 mainInfo();
+
 
 function mainInfo() {
 
@@ -41,20 +42,16 @@ function mainInfo() {
 
                 managerInfo();
 
-                const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email);
-                return manageremp;
+               
 
             }else if ( response.tittle === "Engineer"){
                 
                 githubUsername();
-                const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.github);
-                return engineeremp;
-
+               
             }else {
 
                 internSchool();
-                const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.school);
-                return internemp;
+                
             }
 
     });
@@ -72,6 +69,9 @@ function managerInfo() {
     ]).then(function(responsemanager){
 
             employeeinfo.office = responsemanager.office;
+            const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email);
+            console.log(manageremp);
+            return manageremp;
     });
 
 };
@@ -86,6 +86,10 @@ function githubUsername() {
         
     ]).then(function(responseengineer){
             employeeinfo.github = responseengineer.username
+            
+            const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.github);
+            console.log(engineeremp);
+            return engineeremp;
 
     });
 
@@ -102,6 +106,9 @@ function internSchool() {
     ]).then(function(responseintern){
         employeeinfo.school= responseintern.school;
 
+        const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.school);
+                console.log(internemp);
+                return internemp;
     });
 
 };
