@@ -93,7 +93,7 @@ function managerInfo() {
     ]).then(function(responsemanager){
 
             employeeinfo.office = responsemanager.office;
-            const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.office);
+            const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.office);
             console.log(manageremp);
             return manageremp;
     });
@@ -111,7 +111,7 @@ function githubUsername() {
     ]).then(function(responseengineer){
             employeeinfo.github = responseengineer.username
             
-            const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.github);
+            const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.github);
             console.log(engineeremp);
             return engineeremp;
 
@@ -130,7 +130,7 @@ function internSchool() {
     ]).then(function(responseintern){
         employeeinfo.school= responseintern.school;
 
-        const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.school);
+        const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
                 console.log(internemp);
                 return internemp;
     });
