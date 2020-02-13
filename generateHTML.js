@@ -1,8 +1,8 @@
 
 
 
-
-DOCTYPE html>
+function generatehtml(employeeinfo){
+const templategenerated = `DOCTYPE html>
 <html>
 
 <head>
@@ -48,7 +48,34 @@ DOCTYPE html>
                 <h1 id="my-team">My Team</h1>
             </div>
         </div>
-    </div>
+    </div>`
+
+employeeinfo.foreach(employee,function(){
+
+    if (employee.tittle === "Manager"){
+        managerCard(manageremp);
+
+    } else if ( employee.tittle === "Enginee"){
+        engineerCard(engineeremp);
+
+    }else {
+        internCard(internemp);
+    }
+
+})
+
+`</div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>`
+
+return templategenerated;
+
+
+}
    
 function managerCard(manageremp){
 
@@ -65,6 +92,9 @@ return `<div class="container">
             </div>
         </div>
     </div>`
+
+
+
 
 }
 
@@ -103,10 +133,3 @@ return `<div class="col-4">
    
             
             
-        </div>
-    </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-</html>
