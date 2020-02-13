@@ -37,14 +37,38 @@ function mainInfo() {
             employeeinfo.name = response.name;
             employeeinfo.id = response.id;
             employeeinfo.email = response.email;
+            employeeinfo.tittle = response.tittle;
 
-            if (response.tittle === "Manager") {
+            
+            // switch(employeeinfo.tittle){
+            //     case "Manager":
+            //         managerInfo();
+            //         break;
+                
+            //     case "Engineer":
+                    
+            //     githubUsername();
+        
+            //         break;
+            //     case "Intern":
+            //         internSchool();
+        
+            //         break;
+            // }
+           
+
+
+
+
+
+
+            if (employeeinfo.tittle === "Manager") {
 
                 managerInfo();
 
                
 
-            }else if ( response.tittle === "Engineer"){
+            }else if ( employeeinfo.tittle === "Engineer"){
                 
                 githubUsername();
                
@@ -69,7 +93,7 @@ function managerInfo() {
     ]).then(function(responsemanager){
 
             employeeinfo.office = responsemanager.office;
-            const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email);
+            const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.office);
             console.log(manageremp);
             return manageremp;
     });
