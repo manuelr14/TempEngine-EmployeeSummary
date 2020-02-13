@@ -12,11 +12,11 @@ const employee = require("./lib/Employee");
 let employeeinfo = { };
 let employeearray = [ ];
 
-mainInfo();
+init();
 
 
 
-function mainInfo() {
+function init() {
 
     return inquirer.prompt([
         {
@@ -148,7 +148,7 @@ function moreEmployee() {
     ]).then(function(response){
 
             if (response.more === "yes"){
-                mainInfo();
+                init();
 
             }else {
                 

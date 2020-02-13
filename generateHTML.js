@@ -62,9 +62,11 @@ let templategenerated = `<DOCTYPE html>
             case "Intern":
                 infoadd = internCard(element);
                 break;
+                
         }
-        templategenerated += infoadd;
+            templategenerated += infoadd;
     });
+    
 templategenerated += `  <!--End Row-->
 
 </div>
