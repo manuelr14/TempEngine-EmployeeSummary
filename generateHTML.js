@@ -85,7 +85,8 @@ return templategenerated;
    
 function managerCard(manager){
 
-return  `<div class="container">
+return  `
+<div class="container">
 <div class="row">
     <div class="col-4">
         <div class="card manager" id="employee-card">
@@ -105,7 +106,8 @@ return  `<div class="container">
 }
 
 function engineerCard(engineer){
-return `<div class="col-4">
+return `
+<div class="col-4">
 <div class="card engineer" id="employee-card">
     <div class="card-body">
         <h4 class="card-title">Name: ${engineer.name}</h4>
@@ -123,7 +125,8 @@ return `<div class="col-4">
 
 function internCard(intern){
 
-return `<div class="col-4">
+return `
+<div class="col-4">
 <div class="card intern" id="employee-card">
     <div class="card-body">
         <h4 class="card-title">Name: ${intern.name}</h4>
