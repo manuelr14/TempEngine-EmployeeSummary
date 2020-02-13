@@ -8,6 +8,8 @@ const intern = require("./lib/Intern");
 
 const employeeinfo = {};
 
+mainInfo();
+
 function mainInfo() {
 
     return inquirer.prompt([
@@ -39,11 +41,25 @@ function mainInfo() {
 
                 managerInfo();
 
+                const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email);
+                return manageremp;
+
+            }else if ( response.tittle === "Engineer"){
+                
+                githubUsername();
+                const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.github);
+                return engineeremp;
+
+            }else {
+
+                internSchool();
+                const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.tittle, employeeinfo.email, employeeinfo.school);
+                return internemp;
             }
 
     });
 
-}
+};
 
 function managerInfo() {
 
@@ -58,7 +74,7 @@ function managerInfo() {
             employeeinfo.office = responsemanager.office;
     });
 
-}
+};
 
 function githubUsername() {
 
@@ -73,7 +89,7 @@ function githubUsername() {
 
     });
 
-}
+};
 
 function internSchool() {
 
@@ -88,7 +104,7 @@ function internSchool() {
 
     });
 
-}
+};
 
 
 
