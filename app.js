@@ -76,14 +76,8 @@ function managerInfo() {
 
             employeeinfo.office = responsemanager.office;
             let manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.office);
-            console.log(manageremp);
             employeearray.push(manageremp);
-            // console.log(employeearray);
-            console.log(employeearray[0].tittle);
-            // console.log(employeeinfo.tittle);
-            
-            // console.log(employeeinfo.tittle[1]);
-
+        
             moreEmployee();
             return manageremp;
     });
@@ -102,10 +96,8 @@ function githubUsername() {
             employeeinfo.github = responseengineer.username
             
             let engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.github);
-            console.log(engineeremp);
             employeearray.push(engineeremp);
-            console.log(employeearray);
-            console.log(employeearray[1].tittle);
+
             moreEmployee();
             return engineeremp;
 
@@ -126,11 +118,10 @@ function internSchool() {
         employeeinfo.school= responseintern.school;
 
         let internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
-                console.log(internemp);
-                employeearray.push(internemp);
-                console.log(employeearray);
-                moreEmployee();
-                return internemp;
+        employeearray.push(internemp);
+                
+        moreEmployee();
+        return internemp;
     });
 
 };
