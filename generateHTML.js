@@ -91,7 +91,7 @@ return  `<div class="container">
         <div class="card manager" id="employee-card">
             <div class="card-body">
                 <h4 class="card-title">Name: ${manager.name}</h4>
-                <h6 class="text-muted card-subtitle mb-2">${manager.tittle}</h6>
+                <h6 class="text-muted card-subtitle mb-2">Tittle: ${manager.tittle}</h6>
                 <h1 id="inside-info">ID:${manager.id}</h1>
                 <h1 id="inside-info">Email:${manager.email}</h1>
                 <h1 id="inside-info">Office Number:${manager.office}</h1>
