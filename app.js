@@ -39,29 +39,6 @@ function mainInfo() {
             employeeinfo.email = response.email;
             employeeinfo.tittle = response.tittle;
 
-            
-            // switch(employeeinfo.tittle){
-            //     case "Manager":
-            //         managerInfo();
-            //         break;
-                
-            //     case "Engineer":
-                    
-            //     githubUsername();
-        
-            //         break;
-            //     case "Intern":
-            //         internSchool();
-        
-            //         break;
-            // }
-           
-
-
-
-
-
-
             if (employeeinfo.tittle === "Manager") {
 
                 managerInfo();
