@@ -1,14 +1,15 @@
-// const fs = require("fs");
 const inquirer = require("inquirer");
 
-// const employee = require("./lib/Employee");
 const manager = require("./lib/Manager");
 const engineer = require("./lib/Engineer");
 const intern = require("./lib/Intern");
+// const fs = require("fs");
+// const employee = require("./lib/Employee");
 
 const employeeinfo = { };
 
 mainInfo();
+
 
 
 function mainInfo() {
@@ -72,6 +73,7 @@ function managerInfo() {
             employeeinfo.office = responsemanager.office;
             const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.office);
             console.log(manageremp);
+            moreEmployee();
             return manageremp;
     });
 
@@ -90,6 +92,7 @@ function githubUsername() {
             
             const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.github);
             console.log(engineeremp);
+            moreEmployee();
             return engineeremp;
 
     });
@@ -110,10 +113,34 @@ function internSchool() {
 
         const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
                 console.log(internemp);
+                moreEmployee();
                 return internemp;
     });
 
 };
+
+function moreEmployee() {
+
+    return inquirer.prompt([
+        {
+            message: "Do you want to add another employee?",
+            type: "list",
+            name:"more",
+            choices:["yes","no"]
+        },
+        
+    ]).then(function(response){
+
+            if (response.more === "yes"){
+                mainInfo();
+
+            }else {
+                return "thank you, creating Template"
+            }
+    });
+
+};
+
 
 
 
