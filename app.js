@@ -3,8 +3,11 @@ const inquirer = require("inquirer");
 const manager = require("./lib/Manager");
 const engineer = require("./lib/Engineer");
 const intern = require("./lib/Intern");
-// const fs = require("fs");
-// const employee = require("./lib/Employee");
+const generateHTML = require("./generatehtml");
+const fs = require("fs");
+const util = require("util");
+const asyncWrite = util.promisify(fs.writeFile);
+const employee = require("./lib/Employee");
 
 const employeeinfo = { };
 
@@ -136,10 +139,19 @@ function moreEmployee() {
 
             }else {
                 console.log("thank you, creating Template");
-            }
-    });
 
+                
+            
+            const html =generateHTML.generatinghtml(employeeinfo);
+
+           asyncWrite("./output/team.html",html);
+         
+        }  
+    });
 };
+
+
+
 
 
 

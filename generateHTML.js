@@ -1,8 +1,8 @@
 
 
 
-function generatehtml(employeeinfo){
-const templategenerated = `DOCTYPE html>
+function generatinghtml(employeeinfo){
+const templategenerated = `<DOCTYPE html>
 <html>
 
 <head>
@@ -50,19 +50,25 @@ const templategenerated = `DOCTYPE html>
         </div>
     </div>`
 
-employeeinfo.foreach(employee,function(){
-
-    if (employee.tittle === "Manager"){
+   
+    for ( var i = 0 ; i < employeeinfo.length ; i++ ) {
+        
+       if (employeeinfo.tittle[i] === "Manager") {
+       
         managerCard(manageremp);
 
-    } else if ( employee.tittle === "Enginee"){
+        } else if ( employeeinfo.tittle[i] === "Enginee"){
         engineerCard(engineeremp);
 
-    }else {
+        }else {
         internCard(internemp);
+        }
     }
+  
 
-})
+   
+
+
 
 `</div>
 </div>
@@ -76,6 +82,8 @@ return templategenerated;
 
 
 }
+
+
    
 function managerCard(manageremp){
 
@@ -129,6 +137,8 @@ return `<div class="col-4">
 </div>`
 
 }
+
+module.exports = {generatinghtml: generatinghtml};
    
    
             
