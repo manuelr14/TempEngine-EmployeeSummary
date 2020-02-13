@@ -10,6 +10,7 @@ const writeFile = util.promisify(fs.writeFile);
 const employee = require("./lib/Employee");
 
 const employeeinfo = { };
+const employeearray = [ ];
 
 mainInfo();
 
@@ -76,6 +77,13 @@ function managerInfo() {
             employeeinfo.office = responsemanager.office;
             const manageremp = new manager (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.office);
             console.log(manageremp);
+            employeearray.push(manageremp);
+            // console.log(employeearray);
+            console.log(employeearray[0].tittle);
+            // console.log(employeeinfo.tittle);
+            
+            // console.log(employeeinfo.tittle[1]);
+
             moreEmployee();
             return manageremp;
     });
@@ -95,6 +103,9 @@ function githubUsername() {
             
             const engineeremp = new engineer (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.github);
             console.log(engineeremp);
+            employeearray.push(engineeremp);
+            console.log(employeearray);
+            console.log(employeearray[1].tittle);
             moreEmployee();
             return engineeremp;
 
@@ -116,6 +127,8 @@ function internSchool() {
 
         const internemp = new intern (employeeinfo.name, employeeinfo.id, employeeinfo.email, employeeinfo.school);
                 console.log(internemp);
+                employeearray.push(internemp);
+                onsole.log(employeearray);
                 moreEmployee();
                 return internemp;
     });
@@ -140,10 +153,10 @@ function moreEmployee() {
             }else {
                 
             
-            const html =generateHTML.generatinghtml(employeeinfo);
+            const html =generateHTML.generatinghtml(employeearray);
             writeFile("./output/team.html",html);
-
-           console.log("Thanks!, Template Generated!");
+            console.log(employeearray);
+            console.log("Thanks!, Template Generated!");
          
         }  
     });

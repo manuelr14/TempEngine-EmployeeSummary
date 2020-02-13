@@ -1,7 +1,7 @@
 
 
 
-function generatinghtml(employeeinfo){
+function generatinghtml(employeearray){
 const templategenerated = `<DOCTYPE html>
 <html>
 
@@ -51,19 +51,19 @@ const templategenerated = `<DOCTYPE html>
     </div>`
 
    
-    for ( var i = 0 ; i < employeeinfo.length ; i++ ) {
+    // for ( var i = 0 ; i < employeearray.length ; i++ ) {
         
-       if (employeeinfo.tittle[i] === "Manager") {
+    //    if ( employeearray[i].tittle === "Manager") {
        
-        managerCard(manageremp);
+    //     managerCard(employeearray,i);
 
-        } else if ( employeeinfo.tittle[i] === "Enginee"){
-        engineerCard(engineeremp);
+    //     } else if ( employeearray.tittle === "Engineer"){
+    //     engineerCard(engineeremp);
 
-        }else {
-        internCard(internemp);
-        }
-    }
+    //     }else {
+    //     internCard(internemp);
+    //     }
+    // }
   
 
    
@@ -85,18 +85,18 @@ return templategenerated;
 
 
    
-function managerCard(manageremp){
+function managerCard(employeearray,i){
 
 const managerGenerated =  `<div class="container">
 <div class="row">
     <div class="col-4">
         <div class="card manager" id="employee-card">
             <div class="card-body">
-                <h4 class="card-title">Name: ${manageremp.name}</h4>
-                <h6 class="text-muted card-subtitle mb-2">${manageremp.tittle}</h6>
-                <h1 id="inside-info">ID:${manageremp.id}</h1>
-                <h1 id="inside-info">Email:${manageremp.email}</h1>
-                <h1 id="inside-info">Office Number:${manageremp.office}</h1>
+                <h4 class="card-title">Name: ${employeearray[i].name}</h4>
+                <h6 class="text-muted card-subtitle mb-2">${employeearray[i].tittle}</h6>
+                <h1 id="inside-info">ID:${employeearray[i].id}</h1>
+                <h1 id="inside-info">Email:${employeearray[i].email}</h1>
+                <h1 id="inside-info">Office Number:${employeearray[i].office}</h1>
             </div>
         </div>
     </div>`
@@ -106,35 +106,39 @@ return managerGenerated;
 
 }
 
-function engineerCard(engineeremp){
+function engineerCard(employeearray,i){
 
-return `<div class="col-4">
+const engineerGenerated =  `<div class="col-4">
 <div class="card engineer" id="employee-card">
     <div class="card-body">
-        <h4 class="card-title">Name: ${engineeremp.name}</h4>
+        <h4 class="card-title">Name: ${employeearray[i].name}</h4>
         <h6 class="text-muted card-subtitle mb-2">Tittle: ${engineeremp.tittle}</h6>
-        <h1 id="inside-info">ID: ${engineeremp.id}</h1>
-        <h1 id="inside-info">Email: ${engineeremp.email}</h1>
-        <h1 id="inside-info">Github: ${engineeremp.github}</h1>
+        <h1 id="inside-info">ID: ${employeearray[i].id}</h1>
+        <h1 id="inside-info">Email: ${employeearray[i].email}</h1>
+        <h1 id="inside-info">Github: ${employeearray[i].github}</h1>
     </div>
 </div>
 </div>`
+
+return engineerGenerated;
 
 }
 
-function internCard(internemp){
+function internCard(employeearray,i){
 
-return `<div class="col-4">
+const internGenerated =  `<div class="col-4">
 <div class="card intern" id="employee-card">
     <div class="card-body">
-        <h4 class="card-title">Name: ${internemp.name}</h4>
-        <h6 class="text-muted card-subtitle mb-2">Tittle: ${internemp.tittle}</h6>
-        <h1 id="inside-info">ID: ${internemp.id}</h1>
-        <h1 id="inside-info">Email: ${internemp.email}</h1>
-        <h1 id="inside-info">School: ${internemp.school}</h1>
+        <h4 class="card-title">Name: ${employeearray[i].name}</h4>
+        <h6 class="text-muted card-subtitle mb-2">Tittle: ${employeearray[i].tittle}</h6>
+        <h1 id="inside-info">ID: ${employeearray[i].id}</h1>
+        <h1 id="inside-info">Email: ${employeearray[i].email}</h1>
+        <h1 id="inside-info">School: ${employeearray[i].school}</h1>
     </div>
 </div>
 </div>`
+
+return internGenerated;
 
 }
 
