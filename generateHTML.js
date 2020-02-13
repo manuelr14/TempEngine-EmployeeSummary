@@ -2,7 +2,7 @@
 
 
 function generatinghtml(employeearray){
-const templategenerated = `<DOCTYPE html>
+let templategenerated = `<DOCTYPE html>
 <html>
 
 <head>
@@ -50,27 +50,24 @@ const templategenerated = `<DOCTYPE html>
         </div>
     </div>`
 
-   
-    // for ( var i = 0 ; i < employeearray.length ; i++ ) {
-        
-    //    if ( employeearray[i].tittle === "Manager") {
-       
-    //     managerCard(employeearray,i);
+    employeearray.forEach(element => {
+        let infoadd=" ";
+        switch(element.title){
+            case "Manager":
+                infoadd = managerCard(element);
+                break;
+            case "Engineer":
+                infoadd= engineerCard(element);
+                break;
+            case "Intern":
+                infoadd = internCard(element);
+                break;
+        }
+        templategenerated+=infoadd;
+    });
+templategenerated+=`  <!--End Row-->
 
-    //     } else if ( employeearray.tittle === "Engineer"){
-    //     engineerCard(engineeremp);
-
-    //     }else {
-    //     internCard(internemp);
-    //     }
-    // }
-  
-
-   
-
-
-
-`</div>
+</div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -78,25 +75,24 @@ const templategenerated = `<DOCTYPE html>
 
 </html>`
 
-return templategenerated;
-
+return templategenerated;  
 
 }
 
 
    
-function managerCard(employeearray,i){
+function managerCard(manager){
 
 const managerGenerated =  `<div class="container">
 <div class="row">
     <div class="col-4">
         <div class="card manager" id="employee-card">
             <div class="card-body">
-                <h4 class="card-title">Name: ${employeearray[i].name}</h4>
-                <h6 class="text-muted card-subtitle mb-2">${employeearray[i].tittle}</h6>
-                <h1 id="inside-info">ID:${employeearray[i].id}</h1>
-                <h1 id="inside-info">Email:${employeearray[i].email}</h1>
-                <h1 id="inside-info">Office Number:${employeearray[i].office}</h1>
+                <h4 class="card-title">Name: ${manager.name}</h4>
+                <h6 class="text-muted card-subtitle mb-2">${manager.tittle}</h6>
+                <h1 id="inside-info">ID:${manager.id}</h1>
+                <h1 id="inside-info">Email:${manager.email}</h1>
+                <h1 id="inside-info">Office Number:${manager.office}</h1>
             </div>
         </div>
     </div>`
@@ -106,16 +102,16 @@ return managerGenerated;
 
 }
 
-function engineerCard(employeearray,i){
+function engineerCard(engineer){
 
 const engineerGenerated =  `<div class="col-4">
 <div class="card engineer" id="employee-card">
     <div class="card-body">
-        <h4 class="card-title">Name: ${employeearray[i].name}</h4>
-        <h6 class="text-muted card-subtitle mb-2">Tittle: ${engineeremp.tittle}</h6>
-        <h1 id="inside-info">ID: ${employeearray[i].id}</h1>
-        <h1 id="inside-info">Email: ${employeearray[i].email}</h1>
-        <h1 id="inside-info">Github: ${employeearray[i].github}</h1>
+        <h4 class="card-title">Name: ${engineer.name}</h4>
+        <h6 class="text-muted card-subtitle mb-2">Tittle: ${engineer.tittle}</h6>
+        <h1 id="inside-info">ID: ${engineer.id}</h1>
+        <h1 id="inside-info">Email: ${engineer.email}</h1>
+        <h1 id="inside-info">Github: ${engineer.github}</h1>
     </div>
 </div>
 </div>`
@@ -124,16 +120,16 @@ return engineerGenerated;
 
 }
 
-function internCard(employeearray,i){
+function internCard(intern){
 
 const internGenerated =  `<div class="col-4">
 <div class="card intern" id="employee-card">
     <div class="card-body">
-        <h4 class="card-title">Name: ${employeearray[i].name}</h4>
-        <h6 class="text-muted card-subtitle mb-2">Tittle: ${employeearray[i].tittle}</h6>
-        <h1 id="inside-info">ID: ${employeearray[i].id}</h1>
-        <h1 id="inside-info">Email: ${employeearray[i].email}</h1>
-        <h1 id="inside-info">School: ${employeearray[i].school}</h1>
+        <h4 class="card-title">Name: ${intern.name}</h4>
+        <h6 class="text-muted card-subtitle mb-2">Tittle: ${intern.tittle}</h6>
+        <h1 id="inside-info">ID: ${intern.id}</h1>
+        <h1 id="inside-info">Email: ${intern.email}</h1>
+        <h1 id="inside-info">School: ${intern.school}</h1>
     </div>
 </div>
 </div>`
